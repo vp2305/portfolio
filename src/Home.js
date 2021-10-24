@@ -257,7 +257,7 @@ function Home() {
                         <span>
                             <p>Created this website using <strong>React, JS, CSS, and Firebase</strong>. Used material-ui for additional functionality and icons.</p>
                         </span>
-                        <h2><a href = "https://github.com/vp2305/My-Portfolio" target = "_blank"><GitHubIcon/></a></h2>
+                        <h2><a href = "https://github.com/vp2305/portfolio" target = "_blank"><GitHubIcon/></a></h2>
                     </div>
                     <div className = "project_card">
                         <InstagramIcon fontSize = "large"/>
