@@ -127,7 +127,13 @@ function Home() {
                             <button className="skill_list">JavaScript</button>
                         </span>
                         <span>
-                            <button className="skill_list">Andriod Studio</button>
+                            <button className="skill_list">Kotlin</button>
+                        </span>
+                        <span>
+                            <button className="skill_list">Dart</button>
+                        </span>
+                        <span>
+                            <button className="skill_list">VBA</button>
                         </span>
                     </div>
 
