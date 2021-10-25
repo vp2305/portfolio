@@ -86,9 +86,8 @@ function Home() {
                             <p className = "a_contact_items">
                                 <p className = "first_word">
                                     <PersonIcon / >  
-                                    <span className = "about_header">Age</span>: 19
+                                    <span className = "about_header">Age</span>: 20
                                 </p>
-                                
                                 
                                 <p className = "a_contact_items_l02">
                                     <EmailIcon / >

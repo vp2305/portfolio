@@ -1,26 +1,37 @@
 import React from 'react';
 import "./Header.css";
 import Headroom from "react-headroom";
+import { useState } from 'react';
 function Header() {
+    const [header, setHeader] = useState(false);
+    var checkbox = document.getElementById("menu-btn");
+    const backgroundChange = () => {
+        if (window.scrollY >= 80) {
+            setHeader(true);
+        } else {
+            setHeader(false);
+        }
+    };
+    window.addEventListener("scroll", backgroundChange);
     return (
         <Headroom>
-            <header className = "header">
-                <img 
-                    className = "my-logo"
-                    src = "https://firebasestorage.googleapis.com/v0/b/instagram-clone-9babf.appspot.com/o/images%2FYAY-removebg-preview.png?alt=media&token=ad63e9b1-1f40-48de-935f-e8eb93fce061"
-                    alt = ""
-                />
+            <header className={header ? "header active" : "header"} id = "header">
+                <div className="header__logoContainer">
+                    <img
+                        src="/Images/logo.png"
+                        height="90"
+                        width="90"
+                        alt=""
+                        className = "logo"
+                    />
+                </div>
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
-                <label
-                    className="menu-icon"
-                    htmlFor="menu-btn"
-                    style={{color: "white"}}
-                    >
+                <label className="menu-icon" htmlFor="menu-btn">
                     <span className="navicon"></span>
                 </label>
-                <ul className = "menu">
+                <ul className="menu">
                     <li>
-                        <a href="#home">Home</a>
+                        <a href="#home" >Home</a>
                     </li>
                     <li>
                         <a href="#about">About</a>

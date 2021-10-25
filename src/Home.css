@@ -15,6 +15,7 @@
   flex-direction: column;
   text-align: center;
   height: 100vh;
+  width: 100%;
 }
 
 .greeting__divider > h3 {
@@ -162,6 +163,7 @@
 
 .skill_list {
   min-width: 109px;
+  padding: 10px;
   height: 40px;
   border-radius: 100px;
   border: none;
@@ -186,23 +188,27 @@
 }
 
 .cv_link > button {
-  min-width: 130px;
+  min-width: 140px;
   height: 45px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
   transition: all 0.8s ease;
-  background-color: rgb(14, 14, 14);
+  background-color: #4357ad;
   color: white;
   white-space: nowrap;
   outline: 0px;
+  font-size: 16px !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
+  transition: all 0.3s ease !important;
+  font-weight: bold;
 }
 
 .cv_link > button:hover {
-  border-radius: 70px;
+  border-radius: 20px;
+  transform: scale(1.09) !important;
 }
 
 .cv_link > button:active {
