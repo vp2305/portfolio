@@ -45,22 +45,24 @@ function Home() {
 
     
     return (
-        <div className = "Home">
-            <div className = "home__container" id = "home">
-                <div className = "greeting__background">
-                    <div className = "greeting__divider">
-                        <h3>Hello, I'm Vaibhav Patel</h3>
-                        <h4 className = "greeting__line01">A student <span
-                            class = "greeting__line02" > at Wilfrid Laurier University.</span> 
-                        </h4>
+        <div className = "Home" id = "home">
+            <div className = "greeting__background">
+                <div className = "greeting__divider">
+                    <div className = "greeting_section">
+                        <div className = "greeting_wrapper">
+                            <h3>Hello, I'm Vaibhav Patel</h3>
+                            <h4 className = "greeting__line01">A student <span
+                                class = "greeting__line02" > at Wilfrid Laurier University.</span> 
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>
-
+            
            <div className = "aboutme__container" id = "about"> 
                 <img 
                     className = "about__img"
-                    src = "https://firebasestorage.googleapis.com/v0/b/instagram-clone-9babf.appspot.com/o/images%2F90389389_218504109264280_814475539061407744_n.jpg?alt=media&token=13078fbd-ed85-4215-9260-063cebe70fac"
+                    src = "/Images/me.jpg"
                     alt = ""
                 />
                 <div className = "about__container">
@@ -79,17 +81,21 @@ function Home() {
                                 <p className = "first_word"><LocationOnIcon / > 
                                 <span className = "about_header">Location</span>: Ajax, Ontario</p>
 
-                                <p className = "a_contact_items_l01"><PhoneIcon / > 
-                                <span className = "about_header">Phone</span>: +(647)-588-0930</p>
-                            </p>
-                            
-                            <p className = "a_contact_items">
-                                <p className = "first_word">
+                                {/* <p className = "a_contact_items_l01"><PhoneIcon / > 
+                                <span className = "about_header">Phone</span>: +(647)-588-0930</p> */}
+                                <p className = "a_contact_items_l01">
                                     <PersonIcon / >  
                                     <span className = "about_header">Age</span>: 20
                                 </p>
+                            </p>
+                            
+                            <p className = "a_contact_items">
+                                {/* <p className = "first_word">
+                                    <PersonIcon / >  
+                                    <span className = "about_header">Age</span>: 20
+                                </p> */}
                                 
-                                <p className = "a_contact_items_l02">
+                                <p className = "first_word">
                                     <EmailIcon / >
                                     <span className = "about_header">Email</span> : vaibhav.p2305@gmail.com
                                 </p>
@@ -110,7 +116,7 @@ function Home() {
                     </div>
 
                     <div className = "skills_container"> 
-                        <h3>Proficent In:</h3>
+                        <h3>Proficient In:</h3>
                         <span>
                             <button className="skill_list">Python</button>
                         </span>
@@ -156,7 +162,7 @@ function Home() {
                     <div className = "cards">
                         <PhoneIphoneIcon fontSize = "large"/>
                         <h3>App Development</h3>
-                        <span><p>I have created few web based applications such as instagram-clone, and todo-list but now looking to become a Andriod/iOS app developer. </p></span>
+                        <span><p>I have created few web based applications such as instagram-clone, and todo-list but now looking to become a Android/iOS app developer. </p></span>
                     </div>
                     <div className = "cards">
                         <ComputerIcon fontSize = "large"/>
@@ -174,29 +180,33 @@ function Home() {
 
             <div className = "experience_container" id = "experience">
                 <h1></h1>
-                <div className = "experience_list">
-                    <h3>Laurier Work Study Program | <span className = "position">Research Assistant</span></h3>
-                    <li>
-                    Conducted internet research, and analyzed the website about most Legal departments present in Canada such as Law firms, and Police services.
-                    </li>
-                    <li>
-                    Compiled results in an organized and useful format using Microsoft Excel, to provide access to the information collected.
-                    </li>
-                    <li>
-                    Analyzed and picked relative information about the departments that may be useful for the organization.
-                    </li>
-                </div>
-                <div className = "experience_list2">
-                    <h3>Patel Accounting and Tax Consultant Inc. | <span className = "position">UX Designer/Tax Accountant</span></h3>
-                    <li>
-                        Helped give insightful ideas on how to better layout the website to make it as user-friendly as possible.
-                    </li>
-                    <li>
-                        Effectively used QuickBooks and DT Max software to manage clients accounts and tax respectively.
-                    </li>
-                    <li>
-                        Helped re-design the website and information using JavaScript and CSS.
-                    </li>
+                <div className = "experience_wrapper">
+                        <div className = "experience_list">
+                            <h3>Laurier Work Study Program <span className = "position_time">Oct. 2020 - Nov. 2020</span></h3>
+                            <h3 className = "experience_position"><span className = "position">Research Assistant</span></h3>
+                            <li>
+                            Conducted internet research, and analyzed the website about most Legal departments present in Canada such as Law firms, and Police services.
+                            </li>
+                            <li>
+                            Compiled results in an organized and useful format using Microsoft Excel, to provide access to the information collected.
+                            </li>
+                            <li>
+                            Analyzed and picked relative information about the departments that may be useful for the organization.
+                            </li>
+                        </div>
+                        <div className = "experience_list2">
+                            <h3>Patel Accounting and Tax Consultant Inc.<span className = "position_time">Mar. 2020 - Aug. 2020</span></h3>
+                            <h3 className = "experience_position"><span className = "position">UX Designer/Tax Accountant</span></h3>
+                            <li>
+                                Helped give insightful ideas on how to better layout the website to make it as user-friendly as possible.
+                            </li>
+                            <li>
+                                Effectively used QuickBooks and DT Max software to manage clients accounts and tax respectively.
+                            </li>
+                            <li>
+                                Helped re-design the website and information using JavaScript and CSS.
+                            </li>
+                        </div>
                 </div>
             </div>
             
@@ -207,7 +217,7 @@ function Home() {
                         <FaceIcon fontSize = "large"/>
                         <h3>Face Detection and Recognition</h3>
                         <span>
-                            <p>Developed a program using <strong>OpenCV</strong> that recognizes number of individuals present in the picture or video, and create a seperate image of those faces.</p>
+                            <p>Developed a program using <strong>OpenCV</strong> that recognizes number of individuals present in the picture or video, and create a separate image of those faces.</p>
                         </span>
                         <h2><a href = "https://github.com/vp2305/Face-Detection-and-Face-Recognition" target = "_blank"><GitHubIcon/></a></h2>
                     </div>
