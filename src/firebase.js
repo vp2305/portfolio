@@ -1,4 +1,5 @@
 import firebase from "firebase";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyDsgQmlsUO9fMGUG89JfTj2aTCtYNjvOuA",
@@ -13,5 +14,6 @@ const firebaseApp = firebase.initializeApp({
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 const storage = firebase.storage(); //this will be used to upload the pictures
+const googleAnalytics = getAnalytics(firebaseApp);
 
-export { db, auth, storage };
+export { db, auth, storage, googleAnalytics };

@@ -15,14 +15,14 @@ function Header() {
     window.addEventListener("scroll", backgroundChange);
     return (
         <Headroom>
-            <header className={header ? "header active" : "header"} id = "header">
+            <header className={header ? "header active" : "header"} id="header">
                 <div className="header__logoContainer">
                     <img
                         src="/Images/logo.png"
-                        height="90"
-                        width="90"
+                        height="70"
+                        width="70"
                         alt=""
-                        className = "logo"
+                        className="logo"
                     />
                 </div>
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
