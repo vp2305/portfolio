@@ -58,7 +58,7 @@ function Home() {
 
                     <h2>Hi there! Nice to meet you</h2>
                     <p className="about_para">
-                        I'm a third-year Wilfrid Laurier University student and pursuing a degree in Computer Science. I'm a motivated individual who wants to work as a professional software developer. Some of my key interests lie in Artificial intelligence (AI), automation, and full stack development. I have always felt compelled to learn more about emerging technologies and I am always looking for new opportunities to learn and grow.
+                        I am a third-year Computer Science student at Wilfrid Laurier University with a passion for software development and a strong interest in backend development. I possess a diverse set of technical skills, including experience with languages such as Python, Java, and C, as well as experience with database management and cloud-based deployment.  I am dedicated to staying current with emerging technologies and I am always eager to learn new skills and take on new challenges. Outside of my studies, I am the founder of Ontario Gujarati Students Association (OGSA) and have experience as a Jr. Software Developer and Product Analyst at JANA Corporation where I honed my problem-solving and analytical skills, allowing me to effectively develop and optimize software systems. I am an ambitious individual who is always eager to learn and grow in the field, and I am confident that my skills and experience make me a great fit for a career in software development. I am excited to share my knowledge and experience through my personal website and look forward to connecting with like-minded individuals in the industry.
                     </p>
 
                     <div className="about_contact">
@@ -121,7 +121,7 @@ function Home() {
                         </span>
                     </div>
 
-                    <a className="cv_link" href="https://drive.google.com/file/d/1qWGu16YRID47kbABqbtjL7__LiI9R3Ez/view?usp=sharing" target="_blank">
+                    <a className="cv_link" href="https://drive.google.com/file/d/1F8KdzjgrFRdGi9x5hwFfFFVearsKBz0z/view?usp=sharing" target="_blank">
                         <button>
                             Download CV
                         </button>
@@ -164,31 +164,24 @@ function Home() {
                 <h1><span><hr />Experiences<hr /></span></h1>
                 <div className="experience_wrapper">
                     <div className="experience_list">
-                        <h3>JANA Corporation<span className="position_time">Mar. 2022 - Sept. 2022</span></h3>
-                        <h3 className="experience_position"><span className="position">Jr. Software Developer</span></h3>
+                        <h3>Jr. Software Developer<span className="position_time">Mar. 2022 - Sept. 2022</span></h3>
+                        <h3 className="experience_position"><span className="position">JANA Corporation </span></h3>
                         <li>
-                            Worked under <strong>Agile</strong> workflow to develop risk integrity tool for multiple clients in the utility industry.
+                            Created and developed automated tool using <strong>Python</strong> for the QA team to test risk models by comparing the results between RTG Excel files (expected outcome) to Postman API and SQL Server to Postman API.
                         </li>
                         <li>
-                            Gained hands-on experience with relational database such as <strong>SQL Server</strong> for data cleanup and data transfer between servers.
+                            Gained hands-on experience with relational database such as <strong>MS SQL Server</strong> for data cleanup and data transfer between servers.
                         </li>
                         <li>
-                            Developed <strong>automated tool</strong> using <strong>Python</strong> for the QA team to test risk models by comparing the results between <strong>RTG Excel files</strong>(expected outcome) to <strong>Postman API</strong> and <strong>SQL Server</strong> to <strong>Postman API</strong>.
+                            Strong problem-solving skills demonstrated while working under <strong>Agile workflow</strong> to develop risk integrity tool for multiple clients in the utility industry.
                         </li>
                         <li>
-                            Refactored and optimized Python code for two COF risk models by reducing the amount of data/calculation required by utilizing previously calculated in the data from the database using an <strong>SQL script</strong>
+                            Utilized previously calculated data from the database using an SQL script, I refactored and optimized <strong>Azure Functions</strong> for two COF risk models, which resulted in <strong>15%</strong> speedup in performance by reducing the amount of data/calculation required.
                         </li>
-                        <li>
-                            Utilized <strong>Python</strong>, <strong>Azure Functions</strong>, <strong>SQL Server</strong>, <strong>GitHub</strong>, <strong>JIRA</strong>, <strong>Confluence</strong>, and other tools in parallel fashion during software development.
-                        </li>
-                        <li>
-                            Worked with Risk Technologies Group to optimize their code and create Excel files for multiple different risk models.
-                        </li>
-
                     </div>
                     <div className="experience_list">
-                        <h3>JANA Corporation<span className="position_time">Sept. 2021 - Mar. 2022</span></h3>
-                        <h3 className="experience_position"><span className="position">Product Analyst</span></h3>
+                        <h3>Product Analyst<span className="position_time">Sept. 2021 - Mar. 2022</span></h3>
+                        <h3 className="experience_position"><span className="position">JANA Corporation</span></h3>
                         <li>
                             Active collaboration with the Subject Matter Experts to understand <strong>Jobs to Be Done (JTBD)</strong> in the utility industry and <strong>pain points</strong> in the current state to effectively solution and build the product.
                         </li>
@@ -199,7 +192,7 @@ function Home() {
                             Created <strong>user guide</strong> for the very first version of transmission integrity management product.
                         </li>
                         <li>
-                            Worked with development team to define and implement customer change requests to enhance product functionality.
+                            Worked with development team using extraordinary communication skills to define and implement customer change requests to enhance product functionality.
                         </li>
                         <li>
                             <strong>Devised</strong> user stories, use cases, wireframes, happy path, and mock-ups for the functionality.
