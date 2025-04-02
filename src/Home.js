@@ -8,7 +8,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import Card from "./Card";
 
 function Home() {
-  //
+  // Update the list of skills and experiences
   const languages = [
     "Python",
     "JavaScript/TypeScript",
