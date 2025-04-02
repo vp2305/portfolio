@@ -1,15 +1,11 @@
-.greeting__background {
+/* .greeting__background {
   background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80");
-  /* */
   height: 100vh;
-  /*https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80*/
   width: 100%;
-  /* margin-top: -1in; */
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  /* background-position: center center; */
 }
 
 .greeting__divider {
@@ -29,7 +25,6 @@
 }
 
 .greeting_wrapper>h3 {
-  /* margin-top: 35vh; */
   font-size: 60px;
   font-family: Poppins;
   font-weight: 520;
@@ -53,12 +48,8 @@
 
 .greeting__line02 {
   overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  /* border-right: 0.15em solid orange; */
   white-space: nowrap;
-  /* Keeps the content on a single line */
   margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
 
   font-weight: bold;
   font-family: Poppins;
@@ -69,11 +60,6 @@
   border-right: 0.15em solid orange;
 
   animation: typing 8s steps(40, end), blink-caret 0.6s step-end infinite;
-
-  /* If animation is running then for the next iteration add a delay of 15s */
-
-  /* animation-delay: 0s, 20s; */
-  /* animation-iteration-count: infinite; */
   color: #031b1f;
 }
 
@@ -87,7 +73,6 @@
   }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
 
   from,
@@ -106,7 +91,6 @@
   box-sizing: border-box;
   max-width: 100%;
   justify-content: space-around;
-  /* margin-left: 10%; */
   background-image: linear-gradient(120deg, #fdfbfb 0%, #dededf 100%);
 }
 
@@ -194,7 +178,6 @@
   height: 40px;
   border-radius: 100px;
   border: none;
-  /* cursor: pointer; */
   transition: all 0.5s ease;
   background-color: rgb(14, 14, 14);
   color: white;
@@ -248,14 +231,11 @@
   box-sizing: border-box;
   max-width: 100%;
 
-  /* background-image: linear-gradient(358deg, #93a5cf 0%, #edecec 100%); */
   background: #c9ccd3;
   background-image: linear-gradient(-180deg,
       rgba(255, 255, 255, 0.644) 0%,
       rgba(0, 0, 0, 0.5) 100%);
   background-blend-mode: lighten;
-
-  /* color: rgb(236, 190, 190); */
 }
 
 .whatI_canDo>h1,
@@ -345,19 +325,6 @@
 
 .whatIcanDo_cards::after,
 .projects_list::after {
-  /* display: flex;
-  text-align: center;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  height: 500px;
-  justify-content: space-between; */
-  /* display: flex;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 95px;
-  justify-content: space-evenly; */
   content: "";
   display: table;
   clear: both;
@@ -378,9 +345,7 @@
   border-radius: 10px;
   margin: 25px 10px;
   text-align: center;
-  /* margin-top: 3.5em; */
   margin-left: 10%;
-  /* min-height: 10%; */
   transition: all 0.8s ease;
 }
 
@@ -392,7 +357,6 @@
   padding: 40px 30px;
   border-radius: 10px;
   margin: 15px 0px;
-  /* margin-top: 3.5em; */
   margin-left: 4.5%;
   justify-content: center;
   transition: all 0.8s ease;
@@ -434,7 +398,6 @@
 }
 
 .project_card>h2 {
-  /* text-align: left; */
   margin-top: 20px;
   cursor: pointer;
 }
@@ -453,12 +416,8 @@
 }
 
 .experience_list {
-  /* margin-left: 9%; */
-  /* margin-top: 60px; */
   width: 65%;
   margin: 0 auto;
-  /* margin-right: 9%; */
-  /* border: 1px solid; */
   padding: 10px;
 }
 
@@ -482,12 +441,9 @@
 }
 
 .experience_list2 {
-  /* margin-left: 9%; */
   width: 65%;
   margin: 0 auto;
   margin-top: 10px;
-  /* margin-right: 9%; */
-  /* border: 1px solid; */
   padding: 10px;
 }
 
@@ -519,13 +475,6 @@
   color: white;
 }
 
-/* .maintenance {
-  min-height: 40vh;
-  display: flex;
-  flex-flow: column;
-  margin-top: 15%;
-  align-items: center;
-} */
 
 @media only screen and (max-width: 1980px) {
   .cards {
@@ -827,7 +776,6 @@
     margin-top: 25px;
   }
 
-  /* #F2F1F1 */
   .experience_container>h1::after {
     background-image: linear-gradient(283deg, #efeeef 0%, #f2f0f1 100%);
   }
@@ -1060,29 +1008,4 @@
     min-width: 80px;
     font-size: 10px;
   }
-
-  /* .a_contact_items_l01 {
-    font-size: 15px;
-    margin-left: 2em;
-  }
-  .a_contact_items_l02 {
-    margin-left: 1em;
-  }
-  .contact_container > h2 {
-    margin-top: -45px;
-  }
-  .a_contact_items {
-    display: block;
-  }
-  .a_contact_items_l01 {
-    margin-left: 0px;
-    margin-top: 15px;
-
-    display: flex;
-  }
-  .a_contact_items_l02 {
-    margin-left: 0px;
-    margin-top: 15px;
-    display: flex;
-  } */
-}
+} */

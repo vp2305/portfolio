@@ -1,38 +1,51 @@
 import React from "react";
 // import Header from './Header';
 import "./Home.css";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import PersonIcon from "@material-ui/icons/Person";
-import EmailIcon from "@material-ui/icons/Email";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import MailIcon from "@material-ui/icons/Mail";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MailIcon from "@mui/icons-material/Mail";
 import Card from "./Card";
 
 function Home() {
-  //     var typed = new Typed(".typing", {
-  //         strings: ["Developer", "Programmer","Learner", "Student"],
-  //         typeSpeed: 100,
-  //         backspeed: 60,
-  //         loop: true
-  //     });
-  // <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-  // $(window).scroll(function(){
-  //         if(this.scrollY>20){
-  //             $('.navbar').addClass("sticky");
-  //         }else{
-  //             $('.navbar').removeClass("sticky");
-  //         }
-  //         if(this.scrollY > 500){
-  //             $('.scroll-up-btn').addClass("show");
-  //         }else{
-  //             $('.scroll-up-btn').removeClass("show");
-  //         }
-  //     });
+  const languages = [
+    "Python",
+    "JavaScript/TypeScript",
+    "Java",
+    "SQL/KQL",
+    "Go",
+    "Kotlin",
+  ];
+  const databases = ["Firebase", "MongoDB", "MySQL", "PostgreSQL", "Redis"];
+  const certifications = ["Azure Fundamentals"];
+  const frameworks = [
+    "Laravel",
+    "Next.js",
+    "React",
+    "React Native",
+    "Spring Boot",
+  ];
+  const developerTools = [
+    "Azure",
+    "AWS",
+    "Git",
+    "Docker",
+    "GitHub Actions",
+    "Jenkins",
+    "Terraform",
+    "Postman",
+  ];
+
+  const renderList = (items) => {
+    return items.map((item, index) => (
+      <span key={index}>
+        <button className="skill_list">{item}</button>
+      </span>
+    ));
+  };
 
   return (
-    <div className="Home" id="home">
+    <div className="Home">
       <div className="greeting__background">
         <div className="greeting__divider">
           <div className="greeting_section">
@@ -40,7 +53,7 @@ function Home() {
               <h3>Hello, I'm Vaibhav Patel</h3>
               <h4 className="greeting__line01">
                 A student{" "}
-                <span class="greeting__line02">
+                <span className="greeting__line02">
                   {" "}
                   at Wilfrid Laurier University.
                 </span>
@@ -51,98 +64,49 @@ function Home() {
       </div>
 
       <div className="aboutme__container" id="about">
-        <img className="about__img" src="/Images/me.jpg" alt="" />
+        <img className="about__img" src="/Images/Vaibhav Patel.jpeg" alt="" />
         <div className="about__container">
           <h2>Hi there! Nice to meet you</h2>
           <p className="about_para">
-            I am a third-year Computer Science student at Wilfrid Laurier
-            University with a passion for software development and a strong
-            interest in backend development. I possess a diverse set of
-            technical skills, including experience with languages such as
-            Python, Java, and C, as well as experience with database management
-            and cloud-based deployment. I am dedicated to staying current with
-            emerging technologies and I am always eager to learn new skills and
-            take on new challenges. Outside of my studies, I am the founder of
-            Ontario Gujarati Students Association (OGSA) and have experience as
-            a Jr. Software Developer and Product Analyst at JANA Corporation
-            where I honed my problem-solving and analytical skills, allowing me
-            to effectively develop and optimize software systems. I am an
-            ambitious individual who is always eager to learn and grow in the
-            field, and I am confident that my skills and experience make me a
-            great fit for a career in software development. I am excited to
-            share my knowledge and experience through my personal website and
-            look forward to connecting with like-minded individuals in the
-            industry.
+            As a recent graduate from Wilfrid Laurier University with a
+            Bachelor's degree in Computer Science, I am deeply passionate about
+            software development, with a keen interest in backend technologies,
+            blockchain, and database management. My academic journey has
+            equipped me with proficiency in languages such as Python, Java, and
+            JavaScript, alongside hands-on experience in cloud-based deployment.
+            <br />
+            <br />
+            Driven by a constant desire for growth, I remain dedicated to
+            continuous learning and keeping up-to-date with evolving
+            technologies. Through my personal website, I aim to share my
+            insights, experiences, and projects while connecting with
+            like-minded professionals in the industry.
+            <br />
+            <br />I am excited about the possibilities that lie ahead and eager
+            to embark on new challenges and opportunities in the dynamic field
+            of software development.
           </p>
 
-          <div className="about_contact">
-            <div className="line_one">
-              <p className="a_contact_items">
-                <p className="first_word">
-                  <LocationOnIcon />
-                  <span className="about_header">Location</span>: Ajax, Ontario
-                </p>
-                <p className="a_contact_items_l01">
-                  <PersonIcon />
-                  <span className="about_header">Age</span>:{" "}
-                  {new Date().getFullYear() - 2001}
-                </p>
-              </p>
-
-              <p className="a_contact_items">
-                <p className="first_word">
-                  <EmailIcon />
-                  <span className="about_header">Email</span> :
-                  vaibhav.p2305@gmail.com
-                </p>
-              </p>
-            </div>
+          <div class="skills_container">
+            <h3>Languages:</h3>
+            {renderList(languages)}
           </div>
 
-          <div className="skills_container">
-            <h3>Proficient In:</h3>
-            <span>
-              <button className="skill_list">Python</button>
-            </span>
-            <span>
-              <button className="skill_list">JavaScript</button>
-            </span>
-            <span>
-              <button className="skill_list">Java</button>
-            </span>
-            <span>
-              <button className="skill_list">HTML</button>
-            </span>
-            <span>
-              <button className="skill_list">CSS</button>
-            </span>
-            <span>
-              <button className="skill_list">C</button>
-            </span>
-            <span>
-              <button className="skill_list">SQL</button>
-            </span>
-            <span>
-              <button className="skill_list">Kotlin</button>
-            </span>
-            <span>
-              <button className="skill_list">Dart</button>
-            </span>
-            <span>
-              <button className="skill_list">Firebase</button>
-            </span>
-            <span>
-              <button className="skill_list">Node.js</button>
-            </span>
-            <span>
-              <button className="skill_list">Azure Functions</button>
-            </span>
+          <div class="skills_container">
+            <h3>Certification:</h3>
+            {renderList(certifications)}
           </div>
 
           <a
             className="cv_link"
-            href="https://drive.google.com/file/d/1dvd-xfPwRmMP92Ru8YTl3wfJrYOydYdD/view?usp=sharing"
+            href="https://drive.google.com/file/d/1xgsH6flK9A45_ySOHP70ufY4IjQIbT0q/view?usp=share_link"
             target="_blank"
+            rel="noreferrer"
+            // Track this event with Cronitor
+            onClick={() => {
+              console.log("Window: ", window);
+              window.cronitor("track", "DownloadedCV");
+            }}
           >
             <button>Download CV</button>
           </a>
@@ -151,6 +115,36 @@ function Home() {
                     <h1>Sorry for the inconvenience.</h1>
                     <p>The site is still developing, please come back later...</p>
                 </div> */}
+      </div>
+
+      <div className="experience_container" id="skills">
+        <h1>
+          <span>
+            <hr />
+            Skills
+            <hr />
+          </span>
+        </h1>
+        <div className="cardContainer">
+          <Card
+            imageName="BuildIcon"
+            title="Developer Tools"
+            subtitle={renderList(developerTools)}
+            textAlign="center"
+          />
+          <Card
+            imageName="StorageIcon"
+            title="Databases"
+            subtitle={renderList(databases)}
+            textAlign="center"
+          />
+          <Card
+            imageName="DeveloperModeIcon"
+            title="Frameworks"
+            subtitle={renderList(frameworks)}
+            textAlign="center"
+          />
+        </div>
       </div>
 
       <div className="whatI_canDo" id="talents">
@@ -164,23 +158,24 @@ function Home() {
         <div className="cardContainer">
           <Card
             whatIcanDo
-            imageName="PhoneIphoneIcon"
-            title="App Development"
-            // App Development resume description
-            subtitle="I have developed multiple applications for Android and iOS devices. I have experience in developing apps using android studio and flutter for cross-platform development."
+            imageName="CloudIcon"
+            title="Cloud Engineering"
+            subtitle="Proficient in cloud platforms such as Azure and GCP. Experienced in automating cloud resource management, provisioning, and optimization using tools like Terraform and Azure Automation."
+            textAlign="center"
           />
           <Card
             whatIcanDo
             imageName="ComputerIcon"
-            title="Full Stack Developer"
-            subtitle="Using JavaScript, CSS, HTML, and databases like Firebase, I can design a functional E-commerce website. Making the OGSA ticketing website is one of my projects that makes use of all of these."
+            title="Software Development"
+            subtitle="Proficient in developing robust software solutions using a variety of languages and frameworks, including Java, JavaScript, Python, and React. Experienced in full software development lifecycle from conception to deployment, with a focus on creating scalable and maintainable code."
+            textAlign="center"
           />
-
           <Card
             whatIcanDo
-            imageName="GestureIcon"
-            title="Drawing"
-            subtitle="Ever since I was young, I loved drawing out my ideas as it helped me visualize while also increasing my creativity."
+            imageName="AutoModeIcon"
+            title="Automation and Scripting"
+            subtitle="Expertise in automating tasks and processes using Python. Proficient in developing automation scripts for QA, resource management, and optimization, leveraging libraries like Pandas and pyodbc."
+            textAlign="center"
           />
         </div>
       </div>
@@ -196,97 +191,187 @@ function Home() {
         <div className="experience_wrapper">
           <div className="experience_list">
             <h3>
-              Jr. Software Developer
-              <span className="position_time">Mar. 2022 - Sept. 2022</span>
+              Full Stack Developer
+              <span className="position_time">Mar. 2024 - Present</span>
             </h3>
             <h3 className="experience_position">
-              <span className="position">JANA Corporation </span>
+              <span className="position">
+                <em>Wiltekk Digital Solutions - Remote</em>
+              </span>
             </h3>
+            <p style={{ marginBottom: "10px" }}>Project 1: PowHerFit</p>
             <li>
-              Created and developed automated tool using <strong>Python</strong>{" "}
-              for the QA team to test risk models by comparing the results
-              between RTG Excel files (expected outcome) to Postman API and SQL
-              Server to Postman API.
+              Developed robust web applications using <b>Laravel</b> framework,
+              leveraging <b>MVC</b> architecture, eloquent <b>ORM</b>, and blade
+              templating engine to deliver efficient and scalable solutions
             </li>
             <li>
-              Gained hands-on experience with relational database such as{" "}
-              <strong>MS SQL Server</strong> for data cleanup and data transfer
-              between servers.
+              Implemented staging environment on <b>AWS</b>, reducing production
+              deployment risks by enabling thorough API and CMS testing before
+              code promotion
             </li>
             <li>
-              Strong problem-solving skills demonstrated while working under{" "}
-              <strong>Agile workflow</strong> to develop risk integrity tool for
-              multiple clients in the utility industry.
+              Configured <b>Nginx</b> servers on <b>EC2</b> instances, resulting
+              in optimized performance and enhanced communication between
+              backend services and frontend interfaces, improving overall
+              application responsiveness
             </li>
             <li>
-              Utilized previously calculated data from the database using an SQL
-              script, I refactored and optimized{" "}
-              <strong>Azure Functions</strong> for two COF risk models, which
-              resulted in <strong>15%</strong> speedup in performance by
-              reducing the amount of data/calculation required.
+              Established CI/CD pipelines using <b>Github Actions</b>,
+              automating the build, test, and deployment processes, resulting in
+              a <b>40%</b> reduction in deployment time and a decrease in
+              production incidents
+            </li>
+            <p style={{ marginBottom: "10px" }}>Project 2: RealOnes</p>
+            <li>
+              Collaborated with cross-functional teams to swiftly address and
+              rectify <b>35</b> reported issues using Android Studio,
+              demonstrating strong problem-solving skills and attention to
+              detail
+            </li>
+            <li>
+              Identified performance bottlenecks in API responses generated from{" "}
+              <b>AWS Lambda</b> functions, leading to <b>10%</b> optimization
+              improvements
+            </li>
+            <li>
+              Resolved critical issues causing disruptions in the business
+              dashboard functionality, ensuring seamless operation for users and
+              enhancing overall user experience
             </li>
           </div>
           <div className="experience_list">
             <h3>
-              Product Analyst
+              Cloud Engineer (Co-op)
+              <span className="position_time">Sep. 2023 - Dec. 2023</span>
+            </h3>
+            <h3 className="experience_position">
+              <span className="position">
+                <em>Manulife - Toronto, ON</em>
+              </span>
+            </h3>
+            <li>
+              Achieved a significant reduction in subscription expenses by
+              automating the deletion of expired and unused resources through
+              the development of <b>Python</b>-based automation script,
+              utilizing <b>Azure Automation, Azure Resource Graph</b>
+            </li>
+            <li>
+              Automated provisioning of Azure resources through <b>Terraform</b>
+              , reducing deployment time by <b>10%</b> and increasing
+              scalability and reliability for clients
+            </li>
+            <li>
+              Contributed to the improvement of code quality through active
+              participation in code reviews, ensuring adherence to best
+              practices and enhancing overall team efficiency
+            </li>
+          </div>
+          <div className="experience_list">
+            <h3>
+              Software Developer (Part-time)
+              <span className="position_time">Jan. 2023 - Dec. 2023</span>
+            </h3>
+            <h3 className="experience_position">
+              <span className="position">
+                <em>Gravioty Research - Remote</em>
+              </span>
+            </h3>
+            <li>
+              Developed a multi-currency cryptocurrency wallet from scratch,
+              providing support for Ethereum and Bitcoin blockchains using{" "}
+              <b>React, Web3.js, Ethers.js, and Bitcoinjs-lib</b>
+            </li>
+            <li>
+              Designed and implemented a robust state management architecture
+              for the wallet utilizing <b>Redux</b>, resulting in optimized data
+              handling
+            </li>
+            <li>
+              Integrated <b>WebSocket</b> for real-time updates on
+              cryptocurrency prices, ensuring users have access to the most
+              up-to-date information
+            </li>
+            <li>
+              Increased cross-browser compatibility by devising dynamic and
+              easily configurable webpack scripts, ensuring seamless user
+              experience across different browsers
+            </li>
+          </div>
+          <div className="experience_list">
+            <h3>
+              Software Developer (Intern)
+              <span className="position_time">Mar. 2022 - Aug. 2022</span>
+            </h3>
+            <h3 className="experience_position">
+              <span className="position">
+                <em>JANA Corporation - Aurora, ON</em>
+              </span>
+            </h3>
+            <li>
+              Automated QA process using <b>Python, Pandas, and pyodbc</b>,
+              resulting in a <b>20%</b> reduction in testing time and ensuring
+              data accuracy across Excel, APIs, and databases for <b>21</b> risk
+              models
+            </li>
+            <li>
+              Enhanced data extraction from external <b>MS SQL Servers</b> with
+              Export Wizard and custom <b>SQL queries</b>, pivotal to achieving
+              efficient risk model implementation
+            </li>
+            <li>
+              Accomplished a <b>10%</b> optimization of <b>2 COF risk models</b>{" "}
+              by measuring their performance and taking the action of
+              strategically enhancing <b>Azure Functions</b>, which involved
+              eliminating redundant calculations
+            </li>
+          </div>
+          <div className="experience_list">
+            <h3>
+              Product Analyst (Co-op)
               <span className="position_time">Sept. 2021 - Mar. 2022</span>
             </h3>
             <h3 className="experience_position">
-              <span className="position">JANA Corporation</span>
+              <span className="position">
+                <em>JANA Corporation - Aurora, ON</em>
+              </span>
             </h3>
             <li>
-              Active collaboration with the Subject Matter Experts to understand{" "}
-              <strong>Jobs to Be Done (JTBD)</strong> in the utility industry
-              and <strong>pain points</strong> in the current state to
-              effectively solution and build the product.
+              Collaborated with <strong>SMEs</strong> to understand{" "}
+              <strong>JTBD</strong> and pain points in the utility industry,
+              leading to effective solution and product building
             </li>
             <li>
-              Configured <strong>Product-board</strong> to provide more
-              transparency across the organization to learn about scheduled
-              releases and features associated with every release of the risk
-              management product.
+              Assisted with the implementation of <strong>ProductBoard</strong>{" "}
+              for <strong>10x</strong> better transparency and organization-wide
+              understanding of product releases and features
             </li>
             <li>
-              Created <strong>user guide</strong> for the very first version of
-              transmission integrity management product.
-            </li>
-            <li>
-              Worked with development team using extraordinary communication
-              skills to define and implement customer change requests to enhance
-              product functionality.
-            </li>
-            <li>
-              <strong>Devised</strong> user stories, use cases, wireframes,
-              happy path, and mock-ups for the functionality.
-            </li>
-            <li>
-              Attended weekly development team meetings and acted as a product
-              liaison in daily <strong>stand-up</strong>.
+              Created user guide, user stories, use cases, wireframes, happy
+              paths, and mock-ups, leading to a clear visualization and
+              communication of the product's functionality
             </li>
           </div>
           <div className="experience_list">
             <h3>
-              Patel Accounting and Tax Consultant Inc.
-              <span className="position_time">Mar. 2020 - Aug. 2020</span>
+              Founder
+              <span className="position_time">Aug. 2021 - Present</span>
             </h3>
             <h3 className="experience_position">
-              <span className="position">Web Developer</span>
+              <span className="position">
+                <em>OGSA (Ontario Gujarati Students Association)</em>
+              </span>
             </h3>
             <li>
-              Effectively utilized <strong>Wordpress</strong> to add pages to
-              the website for the company.
+              Founded and managing an independent cultural group, organizing,
+              and hosting <strong>5+ events</strong> annually with{" "}
+              <strong>700+ attendees</strong>, sharpening my leadership and
+              teamwork abilities
             </li>
             <li>
-              Monitored website performance and handled troubleshooting and
-              WordPress issues.
-            </li>
-            <li>
-              Helped give insightful ideas on how to better layout the website
-              to make it as <strong>user-friendly</strong> as possible.
-            </li>
-            <li>
-              Re-designed the website and modified pages using{" "}
-              <strong>HTML</strong> and <strong>CSS</strong>.
+              Demonstrated technical expertise by developing and implementing an
+              e-commerce website, resulting in increased customization and over
+              <strong> $10,000</strong> in revenue per event
             </li>
           </div>
         </div>
@@ -302,13 +387,29 @@ function Home() {
         </h1>
         <div className="projectCardContainer">
           <Card
-            imageName="HttpIcon"
-            title="OGSA E-Commerce Website"
-            subtitle="OGSA"
-            link="https://github.com/vp2305/portfolio"
-            link2="https://ontariogsa.com"
+            imageName="EmojiPeopleIcon"
+            title="GoSocial"
+            subtitle="GoSocial"
+            link="https://github.com/vp2305/GoSocial"
           />
-
+          <Card
+            imageName="LanguageIcon"
+            title="OGSA"
+            subtitle="OGSA"
+            link2="https://ontario-gsa.web.app/"
+          />
+          <Card
+            imageName="DeveloperBoardIcon"
+            title="Vikky"
+            subtitle="Vikky"
+            link="https://github.com/vp2305/Vikky"
+          />
+          <Card
+            imageName="DriveEtaIcon"
+            title="RideX"
+            subtitle="RideX"
+            link="https://github.com/vp2305/RideX"
+          />
           <Card
             imageName="AppsIcon"
             title="Puzzle Solver"
@@ -316,12 +417,12 @@ function Home() {
             link="https://github.com/vp2305/CP468-A1"
           />
 
-          <Card
+          {/* <Card
             imageName="FaceIcon"
             title="Voice Assistant"
             subtitle="Voice Assistant"
             link="https://github.com/vp2305/VoiceAssistent"
-          />
+          /> */}
 
           {/* <Card
                         imageName="FaceIcon"
@@ -330,26 +431,12 @@ function Home() {
                         link="https://github.com/vp2305/Face-Detection-and-Face-Recognition"
                     /> */}
 
-          <Card
+          {/* <Card
             imageName="ChatIcon"
             title="TCP-Chatroom"
             subtitle="TCP-Chatroom"
             link="https://github.com/vp2305/TCP-Chatroom"
-          />
-
-          <Card
-            imageName="InstagramIcon"
-            title="Instagram Clone"
-            subtitle="Instagram Clone"
-            link="https://github.com/vp2305/Instagram-Clone"
-          />
-
-          <Card
-            imageName="HttpIcon"
-            title="Website Portfolio"
-            subtitle="Website Portfolio"
-            link="https://github.com/vp2305/portfolio"
-          />
+          /> */}
         </div>
       </div>
 
