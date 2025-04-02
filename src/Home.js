@@ -8,6 +8,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import Card from "./Card";
 
 function Home() {
+  //
   const languages = [
     "Python",
     "JavaScript/TypeScript",
