@@ -271,7 +271,7 @@ function Home() {
           <div className="experience_list">
             <h3>
               Software Developer (Part-time)
-              <span className="position_time">Jan. 2023 - Dec. 2023</span>
+              <span className="position_time">Jan. 2023 - Aug. 2023</span>
             </h3>
             <h3 className="experience_position">
               <span className="position">
