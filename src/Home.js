@@ -64,6 +64,39 @@ function Home() {
         </div>
       </div>
 
+      <div className="whatI_canDo" id="talents">
+        <h1>
+          <span>
+            <hr />
+            What I Can Do?
+            <hr />
+          </span>
+        </h1>
+        <div className="cardContainer">
+          <Card
+            whatIcanDo
+            imageName="CloudIcon"
+            title="Cloud Engineering"
+            subtitle="Proficient in cloud platforms such as Azure and GCP. Experienced in automating cloud resource management, provisioning, and optimization using tools like Terraform and Azure Automation."
+            textAlign="center"
+          />
+          <Card
+            whatIcanDo
+            imageName="ComputerIcon"
+            title="Software Development"
+            subtitle="Proficient in developing robust software solutions using a variety of languages and frameworks, including Java, JavaScript, Python, and React. Experienced in full software development lifecycle from conception to deployment, with a focus on creating scalable and maintainable code."
+            textAlign="center"
+          />
+          <Card
+            whatIcanDo
+            imageName="AutoModeIcon"
+            title="Automation and Scripting"
+            subtitle="Expertise in automating tasks and processes using Python. Proficient in developing automation scripts for QA, resource management, and optimization, leveraging libraries like Pandas and pyodbc."
+            textAlign="center"
+          />
+        </div>
+      </div>
+
       <div className="aboutme__container" id="about">
         <img className="about__img" src="/Images/Vaibhav Patel.jpeg" alt="" />
         <div className="about__container">
@@ -143,39 +176,6 @@ function Home() {
             imageName="DeveloperModeIcon"
             title="Frameworks"
             subtitle={renderList(frameworks)}
-            textAlign="center"
-          />
-        </div>
-      </div>
-
-      <div className="whatI_canDo" id="talents">
-        <h1>
-          <span>
-            <hr />
-            What I Can Do?
-            <hr />
-          </span>
-        </h1>
-        <div className="cardContainer">
-          <Card
-            whatIcanDo
-            imageName="CloudIcon"
-            title="Cloud Engineering"
-            subtitle="Proficient in cloud platforms such as Azure and GCP. Experienced in automating cloud resource management, provisioning, and optimization using tools like Terraform and Azure Automation."
-            textAlign="center"
-          />
-          <Card
-            whatIcanDo
-            imageName="ComputerIcon"
-            title="Software Development"
-            subtitle="Proficient in developing robust software solutions using a variety of languages and frameworks, including Java, JavaScript, Python, and React. Experienced in full software development lifecycle from conception to deployment, with a focus on creating scalable and maintainable code."
-            textAlign="center"
-          />
-          <Card
-            whatIcanDo
-            imageName="AutoModeIcon"
-            title="Automation and Scripting"
-            subtitle="Expertise in automating tasks and processes using Python. Proficient in developing automation scripts for QA, resource management, and optimization, leveraging libraries like Pandas and pyodbc."
             textAlign="center"
           />
         </div>
