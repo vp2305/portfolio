@@ -1,13 +1,235 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  /* Brand colors */
+  --color-navy: #0A0F1E;
+  --color-navy-light: #0F172A;
+  --color-navy-card: #111827;
+  --color-gold: #F59E0B;
+  --color-gold-light: #FCD34D;
+  --color-gold-muted: #92400E;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --cursor-size: 18px;
+  --gold: #F59E0B;
+  --gold-light: #FCD34D;
+  --navy: #0A0F1E;
+  --navy-light: #0F172A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0A0F1E;
+  color: #E2E8F0;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #0A0F1E;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0A0F1E; }
+::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+/* ── Custom Cursor ─────────────────────────────────────── */
+a, button, [role="button"], input, select, textarea, .clickable {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: 50%;
+  background-color: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease, border-radius 0.25s ease;
+  will-change: transform;
+}
+
+.custom-cursor.hovering {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(245, 158, 11, 0.15);
+  mix-blend-mode: normal;
+  border: 1.5px solid rgba(245, 158, 11, 0.6);
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 4px; height: 4px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: opacity 0.2s;
+  will-change: transform;
+}
+
+/* ── Glass Card ───────────────────────────────────────── */
+.glass-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(245, 158, 11, 0.15);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+/* ── Gold Glass Card ──────────────────────────────────── */
+.glass-card-gold {
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  box-shadow: 0 4px 32px rgba(245, 158, 11, 0.05);
+}
+
+/* ── Text Gradients ───────────────────────────────────── */
+.text-gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #F59E0B 0%, #FCD34D 50%, #F59E0B 100%);
+}
+
+.text-gradient-subtle {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #F1F5F9 0%, #94A3B8 100%);
+}
+
+/* ── Section Label ────────────────────────────────────── */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.9;
+}
+
+/* ── Gold Underline Decoration ────────────────────────── */
+.gold-rule {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+  margin-top: 1rem;
+}
+
+/* ── Skill Pill ───────────────────────────────────────── */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #FCD34D;
+}
+
+/* ── Timeline Connector ───────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(245, 158, 11, 0.3) 15%, rgba(255,255,255,0.1) 50%, rgba(245, 158, 11, 0.1) 85%, transparent);
+}
+
+/* ── Highlight Badge ──────────────────────────────────── */
+.highlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #FCD34D;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* ── Serif Heading Utility ────────────────────────────── */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* ── Project Card ─────────────────────────────────────── */
+.project-card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.project-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Ambient Aurora Background ────────────────────────── */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 60% at 60% 30%, rgba(71, 85, 105, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 70% at 30% 70%, rgba(245, 158, 11, 0.03) 0%, transparent 70%);
+  animation: ambient-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-drift {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 0%, 0% 100%;
+  }
+  100% {
+    background-position: 10% 10%, 90% 90%, 40% 10%, 10% 90%;
+  }
+}
+
+/* ── Reduced Motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .custom-cursor, .custom-cursor-dot { display: none !important; }
 }
