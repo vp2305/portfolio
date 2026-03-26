@@ -1,0 +1,29 @@
+name: Sync Resume PDF
+on:
+  repository_dispatch:
+    types: [resume-updated]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download PDF from Resume repo
+        env:
+          GH_TOKEN: ${{ secrets.RESUME_SYNC_TOKEN }}
+        run: |
+          gh api /repos/vp2305/Resume/contents/MyResume.pdf \
+            | python3 -c "
+          import json,sys,base64
+          d=json.load(sys.stdin)
+          open('public/VaibhavPatel-Resume.pdf','wb').write(base64.b64decode(d['content']))
+          "
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/VaibhavPatel-Resume.pdf
+          git diff --staged --quiet || git commit -m "chore: sync resume PDF [skip ci]"
+          git push
