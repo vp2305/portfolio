@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Download, ExternalLink } from 'lucide-react';
+import { MapPin, Download } from 'lucide-react';
 
 // ── Gold Duotone Photo ────────────────────────────────────
 // Uses CSS filter stack: grayscale → sepia → hue-rotate → saturate + a gold overlay div
@@ -195,8 +195,7 @@ const About = ({ data }) => {
           {/* CV Button */}
           <a
             href={data.cvLink}
-            target="_blank"
-            rel="noreferrer"
+            download="VaibhavPatel-Resume.pdf"
             onClick={() => {
               if (window.cronitor) window.cronitor('track', 'DownloadedCV');
             }}
@@ -204,7 +203,6 @@ const About = ({ data }) => {
           >
             <Download size={15} className="group-hover:-translate-y-0.5 transition-transform duration-200" />
             Download Resume
-            <ExternalLink size={12} className="text-amber-400/50" />
           </a>
         </motion.div>
       </div>
