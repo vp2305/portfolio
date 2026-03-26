@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Download } from 'lucide-react';
+import { MapPin, Download, ExternalLink } from 'lucide-react';
 
 // ── Gold Duotone Photo ────────────────────────────────────
 // Uses CSS filter stack: grayscale → sepia → hue-rotate → saturate + a gold overlay div
@@ -193,17 +193,31 @@ const About = ({ data }) => {
           </div>
 
           {/* CV Button */}
-          <a
-            href={data.cvLink}
-            download="VaibhavPatel-Resume.pdf"
-            onClick={() => {
-              if (window.cronitor) window.cronitor('track', 'DownloadedCV');
-            }}
-            className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500/8 hover:border-amber-500/50 transition-all duration-200 w-max text-sm font-semibold cursor-pointer"
-          >
-            <Download size={15} className="group-hover:-translate-y-0.5 transition-transform duration-200" />
-            Download Resume
-          </a>
+          <div className="flex items-center gap-3 flex-wrap">
+            <a
+              href={data.cvLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => {
+                if (window.cronitor) window.cronitor('track', 'ViewedCV');
+              }}
+              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500/8 hover:border-amber-500/50 transition-all duration-200 w-max text-sm font-semibold cursor-pointer"
+            >
+              <ExternalLink size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+              View Resume
+            </a>
+            <a
+              href={data.cvLink}
+              download="VaibhavPatel-Resume.pdf"
+              onClick={() => {
+                if (window.cronitor) window.cronitor('track', 'DownloadedCV');
+              }}
+              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-white/10 text-slate-400 hover:border-amber-500/20 hover:text-amber-400 transition-all duration-200 w-max text-sm font-semibold cursor-pointer"
+            >
+              <Download size={15} className="group-hover:-translate-y-0.5 transition-transform duration-200" />
+              Download
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

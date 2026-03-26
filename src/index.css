@@ -92,12 +92,16 @@ a, button, [role="button"], input, select, textarea, .clickable {
   background: rgba(15, 23, 42, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition: border-color 0.3s ease;
+  /* Promote each card to its own compositor layer to prevent
+     mix-blend-mode repaints from the custom cursor causing lag */
+  transform: translateZ(0);
+  will-change: transform;
+  cursor: none;
 }
 
 .glass-card:hover {
   border-color: rgba(245, 158, 11, 0.15);
-  background: rgba(15, 23, 42, 0.9);
 }
 
 /* ── Gold Glass Card ──────────────────────────────────── */
@@ -194,10 +198,11 @@ a, button, [role="button"], input, select, textarea, .clickable {
 /* ── Project Card ─────────────────────────────────────── */
 .project-card-hover {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  cursor: none;
 }
 
 .project-card-hover:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) translateZ(0);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 

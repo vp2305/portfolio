@@ -90,7 +90,7 @@ export const portfolioData = {
       current: true,
       description: [
         "Architected and owned the Disruption Resolution Engine, handling flight disruptions (cancellations, cabin changes, time/flight changes, operational delays) for itinerary reconciliation in mission-critical systems.",
-        "Redesigned system by separating regular and disruption flows, eliminating circular dependencies and enabling rapid feature addition — currently handling 50% of production traffic.",
+        "Redesigned system by separating regular and disruption flows, eliminating circular dependencies and enabling rapid feature addition. Currently handling 50% of production traffic.",
         "Engineered BFS-based graph traversal algorithm to correctly match disrupted segments across complex PNR types (one-way, round-trip, multi-city). Proactively caught critical edge case in operational delay handling that would have silently skipped segments.",
         "Optimized performance through intelligent DynamoDB caching, eliminating redundant EIP calls and expensive graph calculations for repeated PNRs.",
         "Coordinated cross-team integration of meal preorder feature across timezones, implementing graceful error handling and driving operational excellence through Dynatrace and Splunk observability.",

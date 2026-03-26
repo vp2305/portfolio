@@ -38,7 +38,8 @@ const Cursor = () => {
         el.closest('a') ||
         el.closest('button') ||
         el.classList.contains('clickable') ||
-        el.closest('[role="button"]');
+        el.closest('[role="button"]') ||
+        el.closest('.cursor-pointer');
       cursor.classList.toggle('hovering', !!interactive);
     };
 
