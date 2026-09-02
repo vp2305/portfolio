@@ -12,20 +12,19 @@ export const portfolioData = {
   hero: {
     greeting: "Hi, I'm",
     name: "Vaibhav Patel",
-    roles: ["Software Engineer", "Full Stack Developer", "Cloud Engineer"],
+    roles: ["Backend Developer", "Full Stack Developer", "Cloud Engineer"],
     tagline: "I build scalable systems and ship products that matter.",
     description:
-      "Full Stack Developer and Cloud Engineer with 3+ years of experience designing and deploying production-grade applications, from high-performance APIs to intelligent automation pipelines.",
+      "Full Stack Engineer with 3+ years of experience building and operating scalable distributed systems in production environments. Specializes in AWS serverless architectures and owning complex features end-to-end.",
     cta1: "View My Work",
     cta2: "Get In Touch",
     status: "Open to opportunities",
   },
   about: {
     name: "Vaibhav Patel",
-    bio: "I'm a Full Stack Developer and Cloud Engineer based in Canada, specializing in building robust applications and scalable cloud infrastructure. I care deeply about developer experience, system performance, and writing software that stands the test of time.",
-    bio2: "When I'm not shipping features, I'm building side projects, leading community events, or exploring new technologies. Currently working at Air Canada while actively building Insights, a personal finance platform powered by AI.",
-    cvLink:
-      "https://drive.google.com/file/d/1xgsH6flK9A45_ySOHP70ufY4IjQIbT0q/view?usp=share_link",
+    bio: "I'm a Full Stack Engineer and Cloud Engineer based in Canada, specializing in building robust applications and scalable cloud infrastructure. I care deeply about developer experience, system performance, and writing software that stands the test of time.",
+    bio2: "When I'm not shipping features, I'm building side projects, leading community events, or exploring new technologies. Currently working at Air Canada via TCS as a Backend Developer while actively building Insights, a personal finance platform powered by AI.",
+    cvLink: "/VaibhavPatel-Resume.pdf",
     location: "Toronto, Canada",
     availability: "Open to opportunities",
     stats: [
@@ -82,19 +81,25 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      role: "Software Developer",
+      role: "Backend Developer",
       company: "Air Canada",
       companyNote: "via TCS",
       type: "Full-time",
-      location: "Toronto, ON",
+      location: "Remote",
       duration: "June 2025 - Present",
       current: true,
       description: [
-        "Developing and maintaining robust software applications supporting Air Canada's core operations.",
-        "Contributing across all phases of the SDLC, from architecture and design through to deployment and monitoring.",
-        "Collaborating with cross-functional teams to deliver high-impact features at scale.",
+        "Architected and owned the Disruption Resolution Engine, handling flight disruptions (cancellations, cabin changes, time/flight changes, operational delays) for itinerary reconciliation in mission-critical systems.",
+        "Redesigned system by separating regular and disruption flows, eliminating circular dependencies and enabling rapid feature addition. Currently handling 50% of production traffic.",
+        "Engineered BFS-based graph traversal algorithm to correctly match disrupted segments across complex PNR types (one-way, round-trip, multi-city). Proactively caught critical edge case in operational delay handling that would have silently skipped segments.",
+        "Optimized performance through intelligent DynamoDB caching, eliminating redundant EIP calls and expensive graph calculations for repeated PNRs.",
+        "Coordinated cross-team integration of meal preorder feature across timezones, implementing graceful error handling and driving operational excellence through Dynatrace and Splunk observability.",
       ],
-      highlights: [],
+      highlights: [
+        "50% of production traffic",
+        "BFS disruption matching algorithm",
+        "DynamoDB caching optimization",
+      ],
     },
     {
       id: 2,
@@ -103,7 +108,7 @@ export const portfolioData = {
       companyNote: "",
       type: "Remote",
       location: "Remote",
-      duration: "Mar. 2024 - Present",
+      duration: "Mar. 2024 - Jun. 2025",
       current: false,
       description: [
         "Developed web applications with Laravel MVC architecture, ORM, and blade templating for efficient, scalable delivery.",
@@ -179,11 +184,11 @@ export const portfolioData = {
       title: "Insights",
       subtitle: "Personal Finance Platform",
       summary:
-        "A production-grade personal finance platform with a GPT-4 streaming chat assistant, automated Gmail transaction ingestion, AI-powered merchant categorization, and real-time investment price feeds. Built as a TypeScript monorepo on Firebase, PostgreSQL, and Redis.",
+        "A production-grade personal finance platform with a GPT-4 streaming chat assistant, automated Gmail transaction ingestion, AI-powered merchant categorization using OpenAI embeddings, and real-time investment price feeds. Built as a TypeScript monorepo on Firebase, PostgreSQL, and Redis.",
       description:
-        "The backend is a Firebase Cloud Functions v2 Express API backed by PostgreSQL and Redis, paired with a React 18 frontend using Redux Toolkit and DaisyUI. The GPT-4 chat assistant supports 14 function-calling tools for reading and writing budgets, transactions, goals, net worth, and portfolio data in real time via SSE streaming. A scheduled Gmail ingestion pipeline runs every 5 hours, parsing 7 bank email types (credit authorizations, Interac transfers, e-statements) and auto-creating transactions. Merchant categorization uses OpenAI text-embedding-3-small embeddings stored in pgvector with cosine similarity lookups, where user-saved preferences take priority at confidence 1.0. Scheduled Firebase jobs handle recurring transactions, loan payments, daily net-worth snapshots, and stock/ETF/metals/FX price feeds cached in Redis every 10 minutes during market hours. The project also includes route-level code splitting, 3 PostgreSQL triggers, and 38+ unit tests.",
+        "The backend is a Firebase Cloud Functions v2 Express API backed by PostgreSQL and Redis, paired with a React 19 frontend using Redux Toolkit and DaisyUI. The GPT-4 chat assistant supports 14 function-calling tools for reading and writing budgets, transactions, goals, net worth, and portfolio data in real time via SSE streaming. A scheduled Gmail ingestion pipeline runs every 5 hours, parsing 7 bank email types (credit authorizations, Interac transfers, e-statements) and auto-creating transactions. Merchant categorization uses OpenAI text-embedding-3-small embeddings stored in pgvector with cosine similarity lookups, where user-saved preferences take priority at confidence 1.0. Scheduled Firebase jobs handle recurring transactions, loan payments, daily net-worth snapshots, and stock/ETF/metals/FX price feeds cached in Redis every 10 minutes during market hours. The project includes route-level code splitting, 3 PostgreSQL triggers, and 160+ unit tests.",
       techStack: [
-        "React 18",
+        "React 19",
         "TypeScript",
         "Firebase Functions v2",
         "PostgreSQL",
