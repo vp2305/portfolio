@@ -2,59 +2,26 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Download, ExternalLink } from 'lucide-react';
 
-// ── Gold Duotone Photo ────────────────────────────────────
-// Uses CSS filter stack: grayscale → sepia → hue-rotate → saturate + a gold overlay div
-// This approach works universally across all browsers.
 const PhotoCard = ({ name }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      className="relative overflow-hidden rounded-2xl aspect-[4/5] max-w-sm mx-auto lg:mx-0 w-full"
+      className="relative overflow-hidden rounded-2xl aspect-[3/4] max-w-sm mx-auto lg:mx-0 w-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Base image: greyscale with a warm sepia base */}
       <img
-        src="/Images/vaibhav-new.png"
+        src="/Images/vaibhav.jpg"
         alt={name}
         style={{
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          objectPosition: 'center top',
+          objectPosition: '62% 48%',
           display: 'block',
-          // grayscale → sepia (gives warm yellow base) → slight hue rotate for gold
-          filter: hovered
-            ? 'grayscale(100%) sepia(60%) hue-rotate(5deg) saturate(140%) brightness(0.92) contrast(1.1)'
-            : 'grayscale(100%) sepia(80%) hue-rotate(10deg) saturate(160%) brightness(0.85) contrast(1.15)',
           transform: hovered ? 'scale(1.04)' : 'scale(1)',
-          transition: 'filter 0.65s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-        }}
-      />
-
-      {/* Gold colour-wash overlay — mix-blend-mode: color tints the greys gold */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: hovered
-            ? 'rgba(245, 158, 11, 0.18)'
-            : 'rgba(245, 158, 11, 0.28)',
-          mixBlendMode: 'color',
-          pointerEvents: 'none',
-          transition: 'background 0.65s ease',
-        }}
-      />
-
-      {/* Dark navy shadows in the deep tones */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'rgba(10, 15, 30, 0.22)',
-          mixBlendMode: 'multiply',
-          pointerEvents: 'none',
+          transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)',
         }}
       />
 
