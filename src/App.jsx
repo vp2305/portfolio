@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Leadership from './components/Leadership';
-import Contact from './components/Contact';
 import Cursor from './components/Cursor';
 import { portfolioData } from './portfolio';
 import './index.css';
+
+// Below-fold sections — code-split and lazy loaded
+const About      = lazy(() => import('./components/About'));
+const Skills     = lazy(() => import('./components/Skills'));
+const Experience = lazy(() => import('./components/Experience'));
+const Projects   = lazy(() => import('./components/Projects'));
+const Leadership = lazy(() => import('./components/Leadership'));
+const Contact    = lazy(() => import('./components/Contact'));
 
 function App() {
   useEffect(() => {
@@ -39,16 +41,18 @@ function App() {
 
         <main className="w-full flex flex-col items-center justify-center">
           <Hero data={portfolioData.hero} />
-          <About data={portfolioData.about} />
-          <Skills data={portfolioData.skills} />
-          <Experience data={portfolioData.experience} />
-          <Projects data={portfolioData.projects} />
-          <Leadership
-            leadership={portfolioData.leadership}
-            education={portfolioData.education}
-            certifications={portfolioData.certifications}
-          />
-          <Contact data={portfolioData.contact} socials={portfolioData.socials} />
+          <Suspense fallback={null}>
+            <About data={portfolioData.about} />
+            <Skills data={portfolioData.skills} />
+            <Experience data={portfolioData.experience} />
+            <Projects data={portfolioData.projects} />
+            <Leadership
+              leadership={portfolioData.leadership}
+              education={portfolioData.education}
+              certifications={portfolioData.certifications}
+            />
+            <Contact data={portfolioData.contact} socials={portfolioData.socials} />
+          </Suspense>
         </main>
 
         <footer className="w-full py-8 text-center text-sm border-t border-white/5 bg-[#0A0F1E]">

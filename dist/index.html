@@ -101,13 +101,21 @@
     <link rel="apple-touch-icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (async — non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      />
+    </noscript>
 
     <script async src="https://rum.cronitor.io/script.js"></script>
     <script>
@@ -118,10 +126,10 @@
         };
       cronitor("config", { clientKey: "8e4865c1a3f9c9b6fa7c4e02b5bdc896" });
     </script>
-    <script type="module" crossorigin src="/assets/index-C7Gpbun2.js"></script>
+    <script type="module" crossorigin src="/assets/index-Df_3Xv1G.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/motion-vendor-BJyspImz.js">
     <link rel="modulepreload" crossorigin href="/assets/three-vendor-CN6LVMqf.js">
-    <link rel="modulepreload" crossorigin href="/assets/r3f-vendor-Cd91nyfu.js">
+    <link rel="modulepreload" crossorigin href="/assets/r3f-vendor-Dj5UIwzz.js">
     <link rel="stylesheet" crossorigin href="/assets/index-CcjvgmU1.css">
   </head>
   <body class="bg-black text-white antialiased">

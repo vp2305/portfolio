@@ -11,19 +11,26 @@ const PhotoCard = ({ name }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <img
-        src="/Images/vaibhav.jpg"
-        alt={name}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: '62% 48%',
-          display: 'block',
-          transform: hovered ? 'scale(1.04)' : 'scale(1)',
-          transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-        }}
-      />
+      <picture>
+        <source srcSet="/Images/vaibhav.webp" type="image/webp" />
+        <img
+          src="/Images/vaibhav.jpg"
+          alt={name}
+          loading="lazy"
+          decoding="async"
+          width={384}
+          height={512}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: '62% 48%',
+            display: 'block',
+            transform: hovered ? 'scale(1.04)' : 'scale(1)',
+            transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)',
+          }}
+        />
+      </picture>
 
       {/* Bottom gradient fade */}
       <div
