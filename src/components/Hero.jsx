@@ -40,8 +40,11 @@ const RoleCycler = ({ roles }) => {
 // ── Hero Section ─────────────────────────────────────────
 const Hero = ({ data }) => {
   const [canvasReady, setCanvasReady] = useState(false);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   useEffect(() => {
+    // Skip 3D entirely on mobile — saves ~1MB of JS
+    if (isMobile) return;
     // Defer 3D canvas until after main content paints
     if ('requestIdleCallback' in window) {
       const id = requestIdleCallback(() => setCanvasReady(true), { timeout: 2500 });
@@ -50,7 +53,7 @@ const Hero = ({ data }) => {
       const id = setTimeout(() => setCanvasReady(true), 500);
       return () => clearTimeout(id);
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <section

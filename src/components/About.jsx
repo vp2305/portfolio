@@ -12,7 +12,11 @@ const PhotoCard = ({ name }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <picture>
-        <source srcSet="/Images/vaibhav.webp" type="image/webp" />
+        <source
+          type="image/webp"
+          srcSet="/Images/vaibhav-sm.webp 480w, /Images/vaibhav-md.webp 800w, /Images/vaibhav.webp 1200w"
+          sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px"
+        />
         <img
           src="/Images/vaibhav.jpg"
           alt={name}
