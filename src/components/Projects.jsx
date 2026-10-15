@@ -120,8 +120,8 @@ const Projects = ({ data }) => {
           </div>
 
           <div className="absolute bottom-4 right-4 md:hidden flex items-center gap-1.5 text-slate-600 text-xs">
-            <Lock size={11} />
-            Private
+            {project.link ? <ExternalLink size={11} /> : <Lock size={11} />}
+            {project.link ? 'Live site' : 'Private'}
           </div>
         </motion.div>
       ))}

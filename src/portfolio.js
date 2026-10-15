@@ -123,7 +123,7 @@ export const portfolioData = {
       role: "Full Stack Developer",
       company: "Wiltekk Digital Solutions",
       companyNote: "",
-      type: "Remote",
+      type: "",
       location: "Remote",
       duration: "Mar. 2024 - Jun. 2025",
       current: false,

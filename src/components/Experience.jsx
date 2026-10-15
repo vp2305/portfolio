@@ -101,8 +101,12 @@ const Experience = ({ data }) => {
                       <div className="flex items-center gap-1.5 mt-1.5">
                         <MapPin size={11} className="text-slate-600 flex-shrink-0" />
                         <span className="text-slate-600 text-xs">{exp.location}</span>
-                        <span className="text-slate-700 mx-1">·</span>
-                        <span className="text-slate-600 text-xs">{exp.type}</span>
+                        {exp.type && (
+                          <>
+                            <span className="text-slate-700 mx-1">·</span>
+                            <span className="text-slate-600 text-xs">{exp.type}</span>
+                          </>
+                        )}
                       </div>
                     </div>
 
